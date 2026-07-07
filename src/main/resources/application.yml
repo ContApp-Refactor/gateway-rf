@@ -59,7 +59,7 @@ spring:
         - id: inventorypeps
           uri: lb://INVENTORYPEPS
           predicates:
-          - Path=/api/kardex/peps/**  
+          - Path=/api/kardex/peps/**   
 
         - id: config
           uri: lb://CONFIG

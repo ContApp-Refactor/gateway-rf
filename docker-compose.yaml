@@ -1,12 +1,12 @@
 services:
-  gateway:
-    image: jeserna/gateway:v0.0.1165
+  gateway-rf:
+    image: jeserna/gateway-rf:v0.0.1165
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.gateway.entrypoints=web"
-      - "traefik.http.routers.gateway.rule=PathPrefix(`/api/`)"
-      - "traefik.http.services.gateway.loadbalancer.server.port=8080"
-    container_name: gateway
+      - "traefik.http.routers.gateway-rf.entrypoints=web"
+      - "traefik.http.routers.gateway-rf.rule=PathPrefix(`/api/`)"
+      - "traefik.http.services.gateway-rf.loadbalancer.server.port=8080"
+    container_name: gateway-rf
     restart: unless-stopped
     networks:
       - dokploy-network
