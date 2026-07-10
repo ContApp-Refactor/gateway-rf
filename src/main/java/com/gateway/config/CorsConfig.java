@@ -15,7 +15,7 @@ public class CorsConfig {
         corsConfig.addAllowedOrigin("http://localhost:4200");
         corsConfig.addAllowedOrigin("http://contables.unicauca.edu.co");
         corsConfig.addAllowedOrigin("https://contables.unicauca.edu.co");
-
+        corsConfig.addAllowedOrigin("http://10.200.2.240");
         corsConfig.addAllowedMethod("*");
         corsConfig.addAllowedHeader("*");
         corsConfig.addExposedHeader("Content-Disposition");
