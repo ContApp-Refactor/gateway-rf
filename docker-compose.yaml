@@ -7,6 +7,9 @@ services:
       - "traefik.http.routers.gateway-rf.rule=PathPrefix(`/api/`)"
       - "traefik.http.services.gateway-rf.loadbalancer.server.port=8080"
     container_name: gateway-rf
+    env_file:
+      - ${SECRETS_DIR:-/opt/secrets}/common-configs.env
+
     restart: unless-stopped
     networks:
       - dokploy-network
