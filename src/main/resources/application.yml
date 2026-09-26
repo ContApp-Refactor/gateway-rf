@@ -72,7 +72,7 @@ spring:
           - Path=/api/receivableswriteoff/**
 
         - id: payments
-          uri: lb://PAYMENTS
+          uri: lb://CONFIG
           predicates:
           - Path=/api/payments/**
 
