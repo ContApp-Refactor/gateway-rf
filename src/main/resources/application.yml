@@ -17,7 +17,7 @@ spring:
         connect-timeout: 5000
       routes:
         - id: catalogue
-          uri: lb://CATALOGUE
+          uri: lb://CONFIG
           predicates:
             - Path=/api/accountCatalogue/**, /api/tax/**
 
