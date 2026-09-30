@@ -22,9 +22,14 @@ spring:
             - Path=/api/accountCatalogue/**, /api/tax/**
 
         - id: enterprises
-          uri: lb://CONFIG
+          uri: lb://ENTERPRISES
           predicates:
             - Path=/api/enterprises/**
+
+        - id: subjects
+          uri: lb://ENTERPRISES
+          predicates:
+            - Path=/api/subjects/**
 
         - id: factures
           uri: lb://FACTURES
@@ -37,7 +42,7 @@ spring:
             - Path=/api/products/**,/api/product-types/**,/api/categories/**,/api/unit-measures/**
 
         - id: thirds
-          uri: lb://CONFIG
+          uri: lb://THIRDS
           predicates:
             - Path=/api/thirds/**
 
@@ -72,7 +77,7 @@ spring:
           - Path=/api/receivableswriteoff/**
 
         - id: payments
-          uri: lb://CONFIG
+          uri: lb://PAYMENTS
           predicates:
           - Path=/api/payments/**
 
