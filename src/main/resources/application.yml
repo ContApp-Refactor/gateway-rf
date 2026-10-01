@@ -32,7 +32,7 @@ spring:
             - Path=/api/subjects/**
 
         - id: factures
-          uri: lb://FACTURES
+          uri: lb://CONFIG
           predicates:
             - Path=/api/factures/**
 
