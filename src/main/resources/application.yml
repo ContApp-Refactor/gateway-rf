@@ -22,7 +22,7 @@ spring:
             - Path=/api/accountCatalogue/**, /api/tax/**
 
         - id: enterprises
-          uri: lb://ENTERPRISES
+          uri: lb://CONFIG
           predicates:
             - Path=/api/enterprises/**
 
@@ -42,7 +42,7 @@ spring:
             - Path=/api/products/**,/api/product-types/**,/api/categories/**,/api/unit-measures/**
 
         - id: thirds
-          uri: lb://THIRDS
+          uri: lb://CONFIG
           predicates:
             - Path=/api/thirds/**
 
@@ -77,9 +77,9 @@ spring:
           - Path=/api/receivableswriteoff/**
 
         - id: payments
-          uri: lb://PAYMENTS
+          uri: lb://CONFIG
           predicates:
-          - Path=/api/payments/**
+            - Path=/api/payments/**
 
 
         - id: auxiliary-book
