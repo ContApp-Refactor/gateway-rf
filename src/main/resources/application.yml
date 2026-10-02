@@ -88,7 +88,7 @@ spring:
             - Path=/api/auxiliary-books/**
 
         - id: treasury
-          uri: lb://TREASURY
+          uri: lb://CONFIG
           predicates:
             - Path=/api/treasury/**
 
