@@ -37,7 +37,7 @@ spring:
             - Path=/api/factures/**
 
         - id: products
-          uri: lb://PRODUCTS
+          uri: lb://CONFIG
           predicates:
             - Path=/api/products/**,/api/product-types/**,/api/categories/**,/api/unit-measures/**
 
