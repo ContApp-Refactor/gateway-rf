@@ -27,7 +27,7 @@ spring:
             - Path=/api/enterprises/**
 
         - id: subjects
-          uri: lb://ENTERPRISES
+          uri: lb://CONFIG
           predicates:
             - Path=/api/subjects/**
 
