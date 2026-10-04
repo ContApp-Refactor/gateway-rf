@@ -62,7 +62,7 @@ spring:
           - Path=/api/kardex/weighted-average/**
 
         - id: inventorypeps
-          uri: lb://INVENTORYPEPS
+          uri: lb://CONFIG
           predicates:
           - Path=/api/kardex/peps/**   
 
