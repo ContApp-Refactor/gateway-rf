@@ -52,7 +52,7 @@ spring:
             - Path=/api/keycloak/**
 
         - id: stock
-          uri: lb://STOCK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/stock/**
 
