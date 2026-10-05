@@ -57,7 +57,7 @@ spring:
             - Path=/api/stock/**
 
         - id: kardex
-          uri: lb://KARDEX
+          uri: lb://CONFIG
           predicates:
           - Path=/api/kardex/weighted-average/**
 
