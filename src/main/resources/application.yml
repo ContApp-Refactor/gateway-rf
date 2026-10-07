@@ -83,7 +83,7 @@ spring:
 
 
         - id: auxiliary-book
-          uri: lb://AUXILIARY-BOOK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/auxiliary-books/**
 
@@ -102,7 +102,7 @@ spring:
           predicates:
           - Path=/api/financial-statements/**
         - id: auxiliary-book-notifications
-          uri: lb://AUXILIARY-BOOK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/notifications/**
 
