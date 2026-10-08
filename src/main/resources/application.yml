@@ -98,7 +98,7 @@ spring:
             - Path=/api/audit/**
         
         - id: financial-statement
-          uri: lb://FINANCIAL-STATEMENT
+          uri: lb://CONFIG
           predicates:
           - Path=/api/financial-statements/**
         - id: auxiliary-book-notifications
