@@ -93,7 +93,7 @@ spring:
             - Path=/api/treasury/**
 
         - id: audit
-          uri: lb://AUDIT
+          uri: lb://CONFIG
           predicates:
             - Path=/api/audit/**
         
