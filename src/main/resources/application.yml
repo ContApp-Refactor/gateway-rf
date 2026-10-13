@@ -47,7 +47,7 @@ spring:
             - Path=/api/thirds/**
 
         - id: keycloak
-          uri: lb://KEYCLOAK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/keycloak/**
 
