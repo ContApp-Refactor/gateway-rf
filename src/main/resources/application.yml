@@ -17,7 +17,7 @@ spring:
         connect-timeout: 5000
       routes:
         - id: catalogue
-          uri: lb://CATALOGUE
+          uri: lb://CONFIG
           predicates:
             - Path=/api/accountCatalogue/**, /api/tax/**
 
@@ -26,13 +26,18 @@ spring:
           predicates:
             - Path=/api/enterprises/**
 
+        - id: subjects
+          uri: lb://CONFIG
+          predicates:
+            - Path=/api/subjects/**
+
         - id: factures
-          uri: lb://FACTURES
+          uri: lb://CONFIG
           predicates:
             - Path=/api/factures/**
 
         - id: products
-          uri: lb://PRODUCTS
+          uri: lb://CONFIG
           predicates:
             - Path=/api/products/**,/api/product-types/**,/api/categories/**,/api/unit-measures/**
 
@@ -42,22 +47,22 @@ spring:
             - Path=/api/thirds/**
 
         - id: keycloak
-          uri: lb://KEYCLOAK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/keycloak/**
 
         - id: stock
-          uri: lb://STOCK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/stock/**
 
         - id: kardex
-          uri: lb://KARDEX
+          uri: lb://CONFIG
           predicates:
           - Path=/api/kardex/weighted-average/**
 
         - id: inventorypeps
-          uri: lb://INVENTORYPEPS
+          uri: lb://CONFIG
           predicates:
           - Path=/api/kardex/peps/**   
 
@@ -74,30 +79,38 @@ spring:
         - id: payments
           uri: lb://CONFIG
           predicates:
-          - Path=/api/payments/**
+            - Path=/api/payments/**
 
 
         - id: auxiliary-book
-          uri: lb://AUXILIARY-BOOK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/auxiliary-books/**
 
         - id: treasury
-          uri: lb://TREASURY
+          uri: lb://CONFIG
           predicates:
             - Path=/api/treasury/**
 
         - id: audit
-          uri: lb://AUDIT
+          uri: lb://CONFIG
           predicates:
             - Path=/api/audit/**
-        
+
+        # Sondeo de salud: las colecciones E2E esperan el servicio con
+        # {{baseUrl}}/actuator/health antes de arrancar. Solo la ruta de salud,
+        # no el resto del actuator.
+        - id: health
+          uri: lb://CONFIG
+          predicates:
+            - Path=/actuator/health
+
         - id: financial-statement
-          uri: lb://FINANCIAL-STATEMENT
+          uri: lb://CONFIG
           predicates:
           - Path=/api/financial-statements/**
         - id: auxiliary-book-notifications
-          uri: lb://AUXILIARY-BOOK
+          uri: lb://CONFIG
           predicates:
             - Path=/api/notifications/**
 
